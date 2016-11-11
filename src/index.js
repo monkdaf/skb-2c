@@ -12,9 +12,9 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
-  console.log(req.query.fullname);
-  let result = getUserName(req.query.url);
-  res.send(`${result}`);
+  console.log(req.query.username);
+  let result = getUserName(req.query.username);
+  res.send(result);
 });
 
 

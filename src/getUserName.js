@@ -8,12 +8,24 @@
  */
 
 const getUserName = (url) => {
-  let result = 'Invalid username';
   if (isUrlWrong(url)) {
-    return result;
+    return 'Invalid username';
   }
-  result = '1';
-  return result;
+
+  //const arr = url.split('/');
+  //const userName = arr[arr.length - 1].split('?')[0].replace('@', '');
+
+  const arrFullURL = url.split('//');
+  const arr = arrFullURL[arrFullURL.length - 1].split('/');
+  let userName = '';
+  if (arr.length === 1) {
+    userName = arr[0].replace('@', '');
+  } else {
+    userName = arr[1].split('?')[0].replace('@', '');
+  }
+
+
+  return `@${userName}`;
 };
 
 const isUrlWrong = (url) => {
