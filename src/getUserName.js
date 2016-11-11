@@ -7,13 +7,15 @@
  * В случае если в url находится некорретная строка, необходимо вывести `Invalid username`
  */
 
+const isUrlWrong = (url) => {
+  return !!((!url) ||
+  (url.length === 0));
+};
+
 const getUserName = (url) => {
   if (isUrlWrong(url)) {
     return 'Invalid username';
   }
-
-  //const arr = url.split('/');
-  //const userName = arr[arr.length - 1].split('?')[0].replace('@', '');
 
   const arrFullURL = url.split('//');
   const arr = arrFullURL[arrFullURL.length - 1].split('/');
@@ -24,14 +26,7 @@ const getUserName = (url) => {
     userName = arr[1].split('?')[0].replace('@', '');
   }
 
-
   return `@${userName}`;
-};
-
-const isUrlWrong = (url) => {
-  "use strict";
-  return !!((!url) ||
-  (url.length === 0));
 };
 
 export default getUserName;
