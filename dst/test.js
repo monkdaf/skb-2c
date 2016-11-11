@@ -18,9 +18,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       _assert2.default.equal('for test', 'for test');
     });
   });
+
   (0, _mocha.describe)('Check module "getUserName"', function () {
-    (0, _mocha.it)('should return text "for test"', function () {
-      _assert2.default.equal('for test', (0, _getUserName2.default)(''));
+    (0, _mocha.it)('if param is empty', function () {
+      _assert2.default.equal('Invalid username', (0, _getUserName2.default)(''));
     });
   });
 });
