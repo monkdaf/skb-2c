@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Created by daf on 11.11.2016.
  * Многие сервисы, такие как ВК, Twitter, Telegram позволяют занимать унивальные имена пользователей.
@@ -7,7 +9,7 @@
  * В случае если в url находится некорретная строка, необходимо вывести `Invalid username`
  */
 
-const isUrlWrong = (url) => {
+const isUrlWrong = (url: string) => {
   return !!((!url) ||
   (url.length === 0));
 };
